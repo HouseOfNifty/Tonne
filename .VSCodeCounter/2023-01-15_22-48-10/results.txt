@@ -1,0 +1,31 @@
+Date : 2023-01-15 22:48:10
+Directory : c:\Users\stuke\Documents\eBookRN2\Tonne\components
+Total : 7 files,  443 codes, 60 comments, 123 blanks, all 626 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JavaScript |          7 |        443 |         60 |        123 |        626 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                               | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                  |          7 |        443 |         60 |        123 |        626 |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                           | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\stuke\Documents\eBookRN2\Tonne\components\GridItem.js     | JavaScript |         14 |          2 |         14 |         30 |
+| c:\Users\stuke\Documents\eBookRN2\Tonne\components\HomeGrid.js     | JavaScript |         27 |          1 |          6 |         34 |
+| c:\Users\stuke\Documents\eBookRN2\Tonne\components\OpenBook.js     | JavaScript |         92 |         39 |         33 |        164 |
+| c:\Users\stuke\Documents\eBookRN2\Tonne\components\SettingsPage.js | JavaScript |         43 |          0 |          9 |         52 |
+| c:\Users\stuke\Documents\eBookRN2\Tonne\components\TextArea.js     | JavaScript |        158 |         12 |         36 |        206 |
+| c:\Users\stuke\Documents\eBookRN2\Tonne\components\UtilityBar.js   | JavaScript |         39 |          0 |          7 |         46 |
+| c:\Users\stuke\Documents\eBookRN2\Tonne\components\Weight.js       | JavaScript |         70 |          6 |         18 |         94 |
+| Total                                                              |            |        443 |         60 |        123 |        626 |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
