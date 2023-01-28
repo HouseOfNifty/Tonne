@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useContext, useState } from 'react'
-import { View, ActivityIndicator, useWindowDimensions, ScrollView, TouchableWithoutFeedback, StatusBar, Alert, FlatList } from 'react-native'
+import { View, ActivityIndicator, useWindowDimensions, ScrollView, TouchableWithoutFeedback, StatusBar } from 'react-native'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import InBookMenu from './InBookMenu';
 import styles from '../Styles';
 import ReactNativeBlobUtil from 'react-native-blob-util';
 import HTMLRenderer from './HTMLRenderer';
-
-
+import { setIdleTimerDisabled } from 'react-native-idle-timer';
+import AlertBox from './AlertBox';
 
 export default function TextArea(props) {
-    StatusBar.setHidden(true);
+
 
     const { width, height } = useWindowDimensions();
 
@@ -29,6 +29,7 @@ export default function TextArea(props) {
 
     const [showMenu, setShowMenu] = useState(false);
     const [showLoader, setShowLoader] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
 
     const changeFile = async (direction) => {
         if (direction === "back") {
@@ -155,14 +156,30 @@ export default function TextArea(props) {
     useEffect(() => {
         if (props.currentBook != null) {
             loadFile();
+            AsyncStorage.getItem("keepAwake").then((value) => {
+                if (value == "true") {
+                    setIdleTimerDisabled(true);
+                }
+                else{
+                    setIdleTimerDisabled(false);
+                }
+            });
 
-        }
+            AsyncStorage.getItem("delay").then((value) => {
+                if (value != null && value != "0") {
+                    setTimeout(() => {
+                        setShowAlert(true);
+                    }, value * 60000);
+                }
+            });
+        };
     }, [currFile]);
 
     //<HTMLRenderer width={width} currText={currText} />
     //<Text style={{color: "white"}}>{currText}</Text>
     return (
         <View>
+            <AlertBox />
             {showMenu && <InBookMenu chapters={props.currentBook.chapters} selfRef={closeSelf} toShowRef={props.toShowRef} setCurrFileRef={setCurrFileFunc} />}
             <ScrollView ref={viewRef} style={{ height: "100%" }} scrollEnabled={true} renderToHardwareTextureAndroid={true}>
 

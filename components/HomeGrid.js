@@ -21,17 +21,17 @@ export default function HomeGrid(props){
 
     useEffect(()=>{
         loadBooks();
-    }, [])
+    }, [books])
 
     return(
        
         books != null && books.length > 0 ? 
         <View style={tw`flex-auto`}>
             <SearchBar searchRef={setSearch}/>
-            <FlatList style={tw`w-full`} data={books.filter((book) => book.title.includes(search) || book.author.includes(search))} renderItem={({item}) => <GridItem key={item.title} title={item.title} author={item.author} clickBook={props.clickBook} cover={item.cover}/>} />
+            <FlatList style={tw`w-full`} data={books.filter((book) => book.title.includes(search) || book.author.includes(search))} renderItem={({item}) => <GridItem key={item.title} title={item.title} author={item.author} clickBook={props.clickBook} cover={item.cover} path={item.bookPath} booksRef={setBooks}/>} />
             <View style={{height: 100}}></View>
         </View>
         :
-        <Text>Shelf is Empty</Text>
+        <></>
     )
 }
