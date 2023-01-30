@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { View, Text, TouchableOpacity, Animated } from "react-native";
-import tw from "twrnc";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { faX } from '@fortawesome/free-solid-svg-icons';
@@ -48,7 +47,7 @@ export default function AlertBox(props) {
 
         const cancel = () => {
             slideOut();
-
+            AsyncStorage.setItem("workoutMode", "false");
         }
 
         const restart = () => {

@@ -88,7 +88,7 @@ export default function WeightPage() {
     return (
         <View style={{flex: 1, flexDirection: "column", padding: 2, alignContent: "center", justifyContent: "center"}}>
             <Video source={image} repeat={false} useTextureView={true} style={{flex: 1, width: '80%', alignSelf: "center"}} resizeMode={"contain"}/>
-            <Text style={{flex: 1, textAlign: "center"}}>{weight.toFixed(2)} kilograms!</Text>
+            <Text style={{flex: 1, textAlign: "center", fontWeight: 40}}>Your books weigh {weight.toFixed(2)} kilograms!</Text>
         </View>
     );
 }
