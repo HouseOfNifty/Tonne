@@ -183,7 +183,7 @@ export default function TextArea(props) {
             {showMenu && <InBookMenu chapters={props.currentBook.chapters} selfRef={closeSelf} toShowRef={props.toShowRef} setCurrFileRef={setCurrFileFunc} />}
             <ScrollView ref={viewRef} style={{ height: "100%" }} scrollEnabled={true} renderToHardwareTextureAndroid={true}>
 
-                <HTMLRenderer width={width} currText={currText} />
+                <HTMLRenderer width={height ? height : 600} currText={currText} />
 
                 <TouchableWithoutFeedback onPress={scrollDown}><View style={styles.pageBack} ref={pageRef} onLayout={handleLayout}></View></TouchableWithoutFeedback>
             </ScrollView>

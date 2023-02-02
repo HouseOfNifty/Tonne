@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import tw from "twrnc";
 
 export default function AlertBox(props) {
 
@@ -61,8 +62,8 @@ export default function AlertBox(props) {
 
 
         return (<Animated.View style={[style, { left: slideAnim }]}>
-            <Text style={{ marginLeft: 10 }}>You've done {sets} set{sets > 1 ? "s" : ""}</Text>
-            <View style={{ display: "flex", flexDirection: "row" }}>
+            <Text style={tw`ml-4 text-zinc-500`}>You've done {sets} set{sets > 1 ? "s" : ""}</Text>
+            <View style={{ display: "flex", flexDirection: "row", marginLeft: 20 }}>
                 <TouchableOpacity onPress={restart}>
                     <FontAwesomeIcon size={50} color={'rgb(251, 191, 36)'} icon={faRefresh} />
                 </TouchableOpacity>
